@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <style>
+
+        body{
+            margin: 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: teal;
+        }
+        #cont1{
+            background-color: rgba(34, 31, 31, 0.836);
+            /* border: 2px solid red; */
+            padding: 20px;
+            margin: 50px;
+            width: 40%;
+            height: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+        #cont2{
+            padding: 10px;
+            position: absolute;
+            background-color: rgba(34, 31, 31, 0.836);
+            font-size: 100px;
+            color: white;
+        }
+        #cont3{
+            position: absolute;
+            bottom: 10px;
+            /* border:2px solid yellow; */
+            width: 300px;
+            height: 10%;
+            padding: 10px;
+            font-size: 20px;
+            text-align: center;
+            color: blanchedalmond;
+        }
+
+    </style>
+
+    <title>Digital Clock</title>
+</head>
+<body>
+
+    <div id = "cont1" >
+        <div id="cont2"></div>
+        <div id="cont3"></div>
+    </div>
+    
+
+    <script>
+
+        setInterval(function(){
+            let date = new Date();
+            let newDate = date.toLocaleTimeString();
+            document.getElementById("cont2").innerHTML = newDate;
+        }, 1000);
+
+        let d = new Date();
+        let d2 = d.toLocaleDateString();
+        let darray = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+        let final = d2 + "&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp" + darray[d.getDay()]
+        document.getElementById("cont3").innerHTML = final;
+
+    </script>
+    
+</body>
+</html>
